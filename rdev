@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
-CONTAINER_NAME="dev"
-
-docker stop "${CONTAINER_NAME}" > /dev/null
-docker container rm "${CONTAINER_NAME}" > /dev/null
+CONTAINER_NAME="archdev"
+DEBUG="false"
+if [ "${DEBUG}" = "true" ]; then
+  docker stop ${CONTAINER_NAME} ${VERBOSITY}
+  docker container rm "${CONTAINER_NAME}" "${VERBOSITY}"
+else
+  docker stop ${CONTAINER_NAME} ${VERBOSITY}
+  docker container rm "${CONTAINER_NAME}" "${VERBOSITY}"
+fi

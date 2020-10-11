@@ -1,11 +1,18 @@
 #!/usr/bin/env zsh
-CONTAINER_NAME="dev"
+CONTAINER_NAME="archdev"
+DEBUG="false"
 
 CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
 if [ ! "${CID}" ]; then
   # TODO: Install zsh
-  docker run -it -d --name dev archlinux bash
+  if [ "${DEBUG}" = "true" ]; then
+    docker run -it -d --name $CONTAINER_NAME archlinux bash
+  else
+    docker run -it -d --name $CONTAINER_NAME archlinux bash > /dev/null
+  fi
 else
-  echo "Conainer already exists. Skipping!"
+  if [ "${DEBUG}" = "true" ]; then
+    echo "Conainer already exists. Skipping!"
+  fi
 fi
 unset CID
