@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# TODO: Install zsh
+docker run -it -d --name dev archlinux bash
