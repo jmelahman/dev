@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 IMAGE="jmelahman/dev:latest"
 CONTAINER_NAME="jmedev"
-DEBUG="false"
 
 CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
 if [ ! "${CID}" ]; then
-  if [ "${DEBUG}" = "true" ]; then
-    docker run -it -d \
-      -v "${HOME}":/home/user \
-      --name "${CONTAINER_NAME}" \
-      "${IMAGE}"
-  else
-    docker run -it -d \
-      -v $HOME:/home/user \
-      --name $CONTAINER_NAME \
-      "${IMAGE}"
-  fi
+  docker run -it -d \
+    -v "${HOME}":/home/user \
+    --name "${CONTAINER_NAME}" \
+    "${IMAGE}"
 else
-  if [ "${DEBUG}" = "true" ]; then
-    echo "Conainer already exists. Skipping!"
-  fi
+  echo "Conainer already exists. Skipping!"
 fi
 unset CID

@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 CONTAINER_NAME="jmedev"
-DEBUG="false"
-if [ "${DEBUG}" = "true" ]; then
-  docker stop ${CONTAINER_NAME}
-  docker container rm "${CONTAINER_NAME}"
-else
-  docker stop "${CONTAINER_NAME}" > /dev/null
-  docker container rm "${CONTAINER_NAME}" > /dev/null
-fi
+
+docker stop ${CONTAINER_NAME}
+docker container rm "${CONTAINER_NAME}"
