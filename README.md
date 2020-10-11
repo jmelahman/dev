@@ -9,8 +9,10 @@ $ echo 'export PATH="$PATH:$(pwd)"' >> ~/.zshrc && source ~/.zshrc
 ```
 
 ```shell
-$ echo 'alias sdev="zsh ~/code/dev/sdev"' >> ~/.zshrc && source ~/.zshrc
-$ echo 'alias rdev="zsh ~/code/dev/rdev"' >> ~/.zshrc && source ~/.zshrc
+$ echo 'alias ddev="~/code/dev/ddev"' >> ~/.zshrc && source ~/.zshrc
+$ echo 'alias idev="~/code/dev/idev"' >> ~/.zshrc && source ~/.zshrc
+$ echo 'alias rdev="~/code/dev/rdev"' >> ~/.zshrc && source ~/.zshrc
+$ echo 'alias sdev="~/code/dev/sdev"' >> ~/.zshrc && source ~/.zshrc
 ```
 
 Ideally, this is set in your `.zshrc` file.
