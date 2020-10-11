@@ -2,9 +2,9 @@
 CONTAINER_NAME="archdev"
 DEBUG="false"
 if [ "${DEBUG}" = "true" ]; then
-  docker stop ${CONTAINER_NAME} ${VERBOSITY}
-  docker container rm "${CONTAINER_NAME}" "${VERBOSITY}"
+  docker stop ${CONTAINER_NAME}
+  docker container rm "${CONTAINER_NAME}"
 else
-  docker stop ${CONTAINER_NAME} ${VERBOSITY}
-  docker container rm "${CONTAINER_NAME}" "${VERBOSITY}"
+  docker stop "${CONTAINER_NAME}" > /dev/null
+  docker container rm "${CONTAINER_NAME}" > /dev/null
 fi
