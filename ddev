@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 zsh ${__dir}/rdev
 zsh ${__dir}/sdev

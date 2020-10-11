@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 CONTAINER_NAME="archdev"
 DEBUG="false"
 
@@ -6,9 +6,15 @@ CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
 if [ ! "${CID}" ]; then
   # TODO: Install zsh
   if [ "${DEBUG}" = "true" ]; then
-    docker run -it -d --name $CONTAINER_NAME archlinux bash
+    docker run -it -d \
+      -v $HOME:/home/user \
+      --name $CONTAINER_NAME \
+      archlinux
   else
-    docker run -it -d --name $CONTAINER_NAME archlinux bash > /dev/null
+    docker run -it -d \
+      -v $HOME:/home/user \
+      --name $CONTAINER_NAME \
+      archlinux > /dev/null
   fi
 else
   if [ "${DEBUG}" = "true" ]; then
