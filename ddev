@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+zsh ${__dir}/rdev
+zsh ${__dir}/sdev
+zsh ${__dir}/idev

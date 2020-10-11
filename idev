@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+CONTAINER_NAME="archdev"
+
+docker exec -it "${CONTAINER_NAME}" bash
