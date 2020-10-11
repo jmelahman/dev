@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-CONTAINER_NAME="archdev"
+IMAGE="jmelahman/dev:latest"
+CONTAINER_NAME="jmedev"
 DEBUG="false"
 
 CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
 if [ ! "${CID}" ]; then
-  # TODO: Install zsh
   if [ "${DEBUG}" = "true" ]; then
     docker run -it -d \
-      -v $HOME:/home/user \
-      --name $CONTAINER_NAME \
-      archlinux
+      -v "${HOME}":/home/user \
+      --name "${CONTAINER_NAME}" \
+      "${IMAGE}"
   else
     docker run -it -d \
       -v $HOME:/home/user \
       --name $CONTAINER_NAME \
-      archlinux > /dev/null
+      "${IMAGE}"
   fi
 else
   if [ "${DEBUG}" = "true" ]; then

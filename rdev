@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONTAINER_NAME="archdev"
+CONTAINER_NAME="jmedev"
 DEBUG="false"
 if [ "${DEBUG}" = "true" ]; then
   docker stop ${CONTAINER_NAME}

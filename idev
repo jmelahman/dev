@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-CONTAINER_NAME="archdev"
+CONTAINER_NAME="jmedev"
 
-docker exec -it "${CONTAINER_NAME}" bash
+docker exec -it "${CONTAINER_NAME}" zsh
