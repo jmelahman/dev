@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
+CONTAINER_NAME="dev"
 
-docker container rm dev
+docker stop "${CONTAINER_NAME}" > /dev/null
+docker container rm "${CONTAINER_NAME}" > /dev/null
